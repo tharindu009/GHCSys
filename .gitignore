@@ -26,6 +26,7 @@
 *.sql
 *.sqlite
 DAL/DataAccessManager.cs
+*.config
 
 # OS generated files #
 ######################
