@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A11B2CB-6138-419F-BA64-A872A27C75C1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PointofSale</RootNamespace>
+    <AssemblyName>WorkShopManagment</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>D:\Evesys\Murthi\POS\V6\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://ghcsys.xyz/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationVersion>1.2.2.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-cash-register-70.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B598ACE2F18563C7A8004773863BECE778B7C226</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PointofSale_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\..\Demo\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\Demo\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\Demo\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\Demo\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\Demo\Krypton-master\Krypton-master\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.DevOps.Comments.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.Azure.DevOps.Comments.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Pipelines.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.Azure.Pipelines.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.54.1.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.54.1\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.23.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.2.23.0\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.30.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.6.30.1\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.30.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.30.1\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.30.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.30.1\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.30.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.30.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Build.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.Build.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Build.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.Build.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Build2.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Build2.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Core.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Core.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Dashboards.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Dashboards.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.DeleteTeamProject, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.DeleteTeamProject.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Diff, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.Diff.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Discussion.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.Discussion.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.DistributedTask.Common.Contracts, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.19.225.1\lib\net472\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Git.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.Git.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Pipelines.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Pipelines.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Policy.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Policy.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.ProjectManagement, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.ProjectManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.SharePointReporting.Integration, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.SharePointReporting.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.SourceControl.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.SourceControl.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Test.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Test.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestImpact.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.TestImpact.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.TestManagement.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.TestManagement.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.TestManagement.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.VersionControl.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.VersionControl.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Common.Integration, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.VersionControl.Common.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Wiki.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Wiki.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Work.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.Work.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.WorkItemTracking.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.WorkItemTracking.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Process.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.WorkItemTracking.Process.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Proxy, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\lib\net472\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.TeamFoundation.WorkItemTracking.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.Client.Interactive, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.InteractiveClient.19.225.1\lib\net472\Microsoft.VisualStudio.Services.Client.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.Common, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.19.225.1\lib\net472\Microsoft.VisualStudio.Services.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.TestManagement.TestPlanning.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.VisualStudio.Services.TestManagement.TestPlanning.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.TestResults.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.19.225.1\lib\net472\Microsoft.VisualStudio.Services.TestResults.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.WebApi, Version=19.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.19.225.1\lib\net472\Microsoft.VisualStudio.Services.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Barcode, Version=7.2.9.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spire.Barcode.7.3.2\lib\net48\Spire.Barcode.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_v2, Version=2.1.6.2060, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_e_sqlite3.2.1.6\lib\net461\SQLitePCLRaw.batteries_v2.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=2.1.6.2060, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.2.1.6\lib\netstandard2.0\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.dynamic_cdecl, Version=2.1.6.2060, Culture=neutral, PublicKeyToken=b68184102cba0b3b, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.dynamic_cdecl.2.1.6\lib\netstandard2.0\SQLitePCLRaw.provider.dynamic_cdecl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.30.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.30.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BAL\DataGridViewPrinter.cs" />
+    <Compile Include="BAL\UserInfo.cs" />
+    <Compile Include="BarCode\Barcode_machine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarCode\Barcode_machine.Designer.cs">
+      <DependentUpon>Barcode_machine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarCode\Ean13.cs" />
+    <Compile Include="BarCode\UPCA.cs" />
+    <Compile Include="Customer\QRcode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\QRcode.Designer.cs">
+      <DependentUpon>QRcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\addVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\addVehicle.Designer.cs">
+      <DependentUpon>addVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\addNewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\addNewCustomer.Designer.cs">
+      <DependentUpon>addNewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\dueList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\dueList.Designer.cs">
+      <DependentUpon>dueList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\duePaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\duePaymentHistory.Designer.cs">
+      <DependentUpon>duePaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\QRDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QRDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\customer.cs" />
+    <Compile Include="DAL\jobCard.cs" />
+    <Compile Include="DAL\DataAccessManager.cs" />
+    <Compile Include="DAL\Quote.cs" />
+    <Compile Include="DAL\register.cs" />
+    <Compile Include="DAL\roles.cs" />
+    <Compile Include="Expences\addBankTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expences\addBankTransfer.Designer.cs">
+      <DependentUpon>addBankTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Expences\addExpences.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expences\addExpences.Designer.cs">
+      <DependentUpon>addExpences.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dashboardOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dashboardOne.Designer.cs">
+      <DependentUpon>dashboardOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\ItemBulkUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\ItemBulkUpload.Designer.cs">
+      <DependentUpon>ItemBulkUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Purchase_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Purchase_History.Designer.cs">
+      <DependentUpon>Purchase_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\stockDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\stockDetail.Designer.cs">
+      <DependentUpon>stockDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\stockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\stockList.Designer.cs">
+      <DependentUpon>stockList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\addItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\addItem.Designer.cs">
+      <DependentUpon>addItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\addCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\addCategory.Designer.cs">
+      <DependentUpon>addCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ProftLostReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ProftLostReport.Designer.cs">
+      <DependentUpon>ProftLostReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MonthlySalesChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\MonthlySalesChart.Designer.cs">
+      <DependentUpon>MonthlySalesChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GeneralLedger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\GeneralLedger.Designer.cs">
+      <DependentUpon>GeneralLedger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportDilaog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ReportDilaog.Designer.cs">
+      <DependentUpon>ReportDilaog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\psodbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>psodbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\quotation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\quotation.Designer.cs">
+      <DependentUpon>quotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\QuotePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\QuotePrint.Designer.cs">
+      <DependentUpon>QuotePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\RegisterQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\RegisterQ.Designer.cs">
+      <DependentUpon>RegisterQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\jobCardHybrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\jobCardHybrid.Designer.cs">
+      <DependentUpon>jobCardHybrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\jobCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\jobCard.Designer.cs">
+      <DependentUpon>jobCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\Currency_Shortcuts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\Currency_Shortcuts.Designer.cs">
+      <DependentUpon>Currency_Shortcuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\POSPrintRpt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\POSPrintRpt.Designer.cs">
+      <DependentUpon>POSPrintRpt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\salesRegisterQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\salesRegisterQ.Designer.cs">
+      <DependentUpon>salesRegisterQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\saleRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\saleRegister.Designer.cs">
+      <DependentUpon>saleRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRegister\salesReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRegister\salesReturn.Designer.cs">
+      <DependentUpon>salesReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\systemSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\systemSettings.Designer.cs">
+      <DependentUpon>systemSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Summary\JobHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Summary\JobHistory.Designer.cs">
+      <DependentUpon>JobHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Summary\todaySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Summary\todaySales.Designer.cs">
+      <DependentUpon>todaySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Summary\JobDetailSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Summary\JobDetailSummary.Designer.cs">
+      <DependentUpon>JobDetailSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMgr\ManageEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMgr\ManageEmployee.Designer.cs">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMgr\addEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMgr\addEmployee.Designer.cs">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMgr\PWDGenerator.cs" />
+    <Compile Include="WarrantyDS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WarrantyDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Warranty\RptWarranty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warranty\RptWarranty.Designer.cs">
+      <DependentUpon>RptWarranty.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BarCode\Barcode_machine.resx">
+      <DependentUpon>Barcode_machine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\QRcode.resx">
+      <DependentUpon>QRcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\addVehicle.resx">
+      <DependentUpon>addVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\addNewCustomer.resx">
+      <DependentUpon>addNewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\dueList.resx">
+      <DependentUpon>dueList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\duePaymentHistory.resx">
+      <DependentUpon>duePaymentHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\QRRpt.rdlc" />
+    <EmbeddedResource Include="Expences\addBankTransfer.resx">
+      <DependentUpon>addBankTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Expences\addExpences.resx">
+      <DependentUpon>addExpences.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dashboardOne.resx">
+      <DependentUpon>dashboardOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\ItemBulkUpload.resx">
+      <DependentUpon>ItemBulkUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Purchase_History.resx">
+      <DependentUpon>Purchase_History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\stockDetail.resx">
+      <DependentUpon>stockDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\stockList.resx">
+      <DependentUpon>stockList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\addItem.resx">
+      <DependentUpon>addItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\addCategory.resx">
+      <DependentUpon>addCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\ProftLostReport.resx">
+      <DependentUpon>ProftLostReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MonthlySalesChart.resx">
+      <DependentUpon>MonthlySalesChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\GeneralLedger.resx">
+      <DependentUpon>GeneralLedger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ReportDilaog.resx">
+      <DependentUpon>ReportDilaog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\POSPrintRpt.resx">
+      <DependentUpon>POSPrintRpt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\quotation.resx">
+      <DependentUpon>quotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\QuotePrint.resx">
+      <DependentUpon>QuotePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\RegisterQ.resx">
+      <DependentUpon>RegisterQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\jobCardHybrid.resx">
+      <DependentUpon>jobCardHybrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\jobCard.resx">
+      <DependentUpon>jobCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\Currency_Shortcuts.resx">
+      <DependentUpon>Currency_Shortcuts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\RptPOS.rdlc" />
+    <EmbeddedResource Include="SalesRegister\RptQuote.rdlc" />
+    <EmbeddedResource Include="SalesRegister\salesRegisterQ.resx">
+      <DependentUpon>salesRegisterQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\saleRegister.resx">
+      <DependentUpon>saleRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRegister\salesReturn.resx">
+      <DependentUpon>salesReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\systemSettings.resx">
+      <DependentUpon>systemSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Summary\JobHistory.resx">
+      <DependentUpon>JobHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Summary\todaySales.resx">
+      <DependentUpon>todaySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Summary\JobDetailSummary.resx">
+      <DependentUpon>JobDetailSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMgr\ManageEmployee.resx">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMgr\addEmployee.resx">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warranty\RptWarranty.rdlc" />
+    <EmbeddedResource Include="Warranty\RptWarranty.resx">
+      <DependentUpon>RptWarranty.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Customer\QRDataSet.xsc">
+      <DependentUpon>QRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Customer\QRDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QRDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Customer\QRDataSet.xss">
+      <DependentUpon>QRDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PointofSale_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SalesRegister\psodbDataSet.xsc">
+      <DependentUpon>psodbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SalesRegister\psodbDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>psodbDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SalesRegister\psodbDataSet.xss">
+      <DependentUpon>psodbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WarrantyDS.xsc">
+      <DependentUpon>WarrantyDS.xsd</DependentUpon>
+    </None>
+    <None Include="WarrantyDS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WarrantyDS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WarrantyDS.xss">
+      <DependentUpon>WarrantyDS.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8-cash-register-70.ico" />
+    <None Include="Resources\icons8-tools-48.png" />
+    <None Include="Resources\icons8-engine-oil-64.png" />
+    <None Include="Resources\icons8-air-filter-64.png" />
+    <None Include="Resources\icons8-oil-filter-64.png" />
+    <None Include="Resources\icons8-user-80.png" />
+    <Content Include="Resources\category.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\icons8-product-64.png" />
+    <None Include="Resources\ItemImage.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\build\Microsoft.TeamFoundationServer.ExtendedClient.targets" Condition="Exists('..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\build\Microsoft.TeamFoundationServer.ExtendedClient.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\build\Microsoft.TeamFoundationServer.ExtendedClient.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TeamFoundationServer.ExtendedClient.19.225.1\build\Microsoft.TeamFoundationServer.ExtendedClient.targets'))" />
+  </Target>
+</Project>
