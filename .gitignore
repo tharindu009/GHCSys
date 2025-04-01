@@ -25,7 +25,7 @@
 *.log
 *.sql
 *.sqlite
-/DAL/DataAccessManager.cs
+DAL/DataAccessManager.cs
 
 # OS generated files #
 ######################
