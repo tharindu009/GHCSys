@@ -1,0 +1,87 @@
+.inventory-item-form-page {
+  padding: 20px;
+  max-width: 700px; /* Optimal width for a form */
+  margin: 20px auto; /* Center the form */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.inventory-item-form-page h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.inventory-item-form .form-group {
+  margin-bottom: 20px;
+}
+
+.inventory-item-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.inventory-item-form input[type="text"],
+.inventory-item-form input[type="number"],
+.inventory-item-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Important for width calculation */
+  font-size: 1em;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.inventory-item-form input:focus,
+.inventory-item-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.inventory-item-form textarea {
+  min-height: 80px; /* Shorter than job description */
+  resize: vertical;
+}
+
+.inventory-item-form .btn-primary {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.2s ease;
+  width: 100%; /* Make button full width */
+}
+
+.inventory-item-form .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.inventory-item-form .btn-primary:disabled {
+  background-color: #a0cfff;
+  cursor: not-allowed;
+}
+
+.error-message.main-error { /* For overall form error */
+  color: #dc3545; 
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.form-error { /* For field-specific errors */
+    display: block;
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 4px;
+}

@@ -1,0 +1,128 @@
+.job-form-page {
+  padding: 20px;
+  max-width: 800px; /* Limit form width for better readability */
+  margin: 20px auto; /* Center the form on the page */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.job-form-page h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.job-form .form-group {
+  margin-bottom: 20px;
+}
+
+.job-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.job-form input[type="text"],
+.job-form input[type="date"],
+.job-form input[type="number"],
+.job-form textarea,
+.job-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Important for width calculation */
+  font-size: 1em;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.job-form input:focus,
+.job-form textarea:focus,
+.job-form select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.job-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.checkbox-group {
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+.checkbox-item, .part-selection-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 5px;
+}
+.checkbox-item:hover, .part-selection-item:hover {
+    background-color: #f9f9f9;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 10px;
+  width: auto; /* Override full width for checkboxes */
+}
+
+.part-selection-item span {
+    flex-grow: 1;
+}
+.part-selection-item input[type="number"] {
+    width: 70px; /* Specific width for quantity input */
+    margin-left: 10px;
+    padding: 5px;
+}
+
+
+.job-form .btn-primary {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.2s ease;
+}
+
+.job-form .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.job-form .btn-primary:disabled {
+  background-color: #a0cfff; /* Lighter blue when disabled */
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545; /* Red for errors */
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.form-error {
+    display: block;
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 4px;
+}
+
+/* Ensure select disabled state is visually clear */
+.job-form select:disabled {
+    background-color: #e9ecef;
+    opacity: 1; /* Override default opacity for disabled elements if needed */
+    cursor: not-allowed;
+}

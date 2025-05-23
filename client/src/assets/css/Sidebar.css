@@ -1,0 +1,37 @@
+.sidebar {
+  width: 220px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-right: 1px solid #dee2e6;
+  min-height: calc(100vh - 60px); /* Assuming navbar height is 60px */
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar-link:hover {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+.sidebar-link.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,148 @@
+.invoice-view-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.invoice-view-page h1, .invoice-view-page h2 {
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.invoice-view-page h2 {
+    font-size: 1.4em;
+    margin-top: 30px;
+}
+
+.invoice-actions-bar {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.status-update-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.status-update-form select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+.invoice-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #efefef;
+  font-size: 0.95em;
+}
+
+.detail-item strong {
+  display: block;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.line-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.line-items-table th,
+.line-items-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.line-items-table th {
+  background-color: #f2f2f2;
+}
+.line-items-table tfoot td {
+    font-weight: bold;
+}
+
+.timestamps {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.85em;
+  color: #777;
+}
+.timestamps p {
+    margin: 5px 0;
+}
+
+/* Use status badge styles from Invoices.css or redefine if needed */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  color: white;
+  text-transform: capitalize;
+  display: inline-block;
+}
+.status-invoice-pending { background-color: #ffc107; color: #333; }
+.status-invoice-paid { background-color: #28a745; }
+.status-invoice-partially-paid { background-color: #17a2b8; }
+.status-invoice-overdue { background-color: #dc3545; }
+.status-invoice-void { background-color: #6c757d; }
+.status-invoice-deleted { background-color: #343a40; color: #fff; }
+
+
+/* General button styles (can be in a global CSS if not already) */
+.btn {
+  padding: 8px 15px;
+  font-size: 0.95em;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-block;
+  text-align: center;
+}
+.btn-primary { background-color: #007bff; color: white; border-color: #007bff;}
+.btn-primary:hover { background-color: #0056b3;}
+.btn-primary:disabled { background-color: #a0cfff; cursor: not-allowed;}
+.btn-danger { background-color: #dc3545; color: white; border-color: #dc3545;}
+.btn-danger:hover { background-color: #c82333; }
+.btn-danger:disabled { background-color: #efa2a9; cursor: not-allowed;}
+.btn-secondary { background-color: #6c757d; color: white; border-color: #6c757d;}
+.btn-secondary:hover { background-color: #545b62; }
+
+.loading-message, .error-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.error-message {
+  color: #D8000C; /* Red for errors */
+  background-color: #FFD2D2; /* Light red background */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #D8000C;
+  border-radius: 4px;
+  text-align: center;
+}

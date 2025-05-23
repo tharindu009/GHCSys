@@ -1,0 +1,140 @@
+.invoices-page {
+  padding: 20px;
+}
+
+.invoices-page h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Filters container styles - can be shared with Jobs.css if identical */
+.filters-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+.filter-input,
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.filter-input {
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+/* Invoices table styles - can be shared with Jobs.css if identical */
+.invoices-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.invoices-table th,
+.invoices-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.invoices-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #555;
+}
+
+.invoices-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.invoices-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.invoices-table .btn {
+  margin-right: 5px;
+}
+
+/* Status badge styles - can be shared or made more specific */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  color: white;
+  text-transform: capitalize;
+  display: inline-block; /* Ensures badge respects padding and background */
+}
+
+/* Invoice specific status colors */
+.status-invoice-pending { background-color: #ffc107; color: #333; } /* Yellow */
+.status-invoice-paid { background-color: #28a745; } /* Green */
+.status-invoice-partially-paid { background-color: #17a2b8; } /* Teal */
+.status-invoice-overdue { background-color: #dc3545; } /* Red */
+.status-invoice-void { background-color: #6c757d; } /* Gray */
+.status-invoice-deleted { background-color: #343a40; color: #fff; } /* Dark Gray / Black */
+
+
+/* Pagination controls styles - can be shared with Jobs.css if identical */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination-controls button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  font-size: 1em;
+}
+
+.loading-message, .error-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.error-message {
+  color: red;
+}
+
+/* General button styles if not already global (can be in App.css or Layout.css) */
+.btn {
+  padding: 6px 12px;
+  font-size: 0.9em;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-block;
+  text-align: center;
+}
+.btn-info { background-color: #17a2b8; color: white; border-color: #17a2b8;}
+.btn-info:hover { background-color: #117a8b; border-color: #117a8b;}
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 0.8em;
+}

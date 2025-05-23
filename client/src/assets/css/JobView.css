@@ -1,0 +1,155 @@
+.job-view-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.job-view-page h1, .job-view-page h2 {
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.job-view-page h2 {
+    font-size: 1.4em;
+    margin-top: 30px;
+}
+
+.job-actions-bar {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.job-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #efefef;
+  font-size: 0.95em;
+}
+
+.detail-item strong {
+  display: block;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.detail-item.full-width {
+    grid-column: 1 / -1; /* Span full width */
+}
+.detail-item p {
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+
+.details-list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border: 1px solid #efefef;
+}
+.service-description {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 4px;
+    padding-left: 10px;
+}
+
+.parts-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.parts-table th,
+.parts-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.parts-table th {
+  background-color: #f2f2f2;
+}
+
+.timestamps {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  font-size: 0.85em;
+  color: #777;
+}
+.timestamps p {
+    margin: 5px 0;
+}
+
+
+/* Use status badge styles from Jobs.css or redefine if needed */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  color: white;
+  text-transform: capitalize;
+  display: inline-block; /* Ensures badge respects padding and background */
+}
+.status-pending { background-color: #ffc107; color: #333; }
+.status-scheduled { background-color: #17a2b8; }
+.status-in-progress { background-color: #007bff; }
+.status-awaiting-parts { background-color: #fd7e14; }
+.status-completed { background-color: #28a745; }
+.status-invoiced { background-color: #6f42c1; }
+.status-cancelled { background-color: #6c757d; }
+.status-deleted { background-color: #dc3545; }
+
+
+/* General button styles (can be in a global CSS if not already) */
+.btn {
+  padding: 8px 15px;
+  font-size: 0.95em;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-block;
+  text-align: center;
+}
+.btn-warning { background-color: #ffc107; color: #212529; border-color: #ffc107;}
+.btn-warning:hover { background-color: #e0a800; }
+.btn-danger { background-color: #dc3545; color: white; border-color: #dc3545;}
+.btn-danger:hover { background-color: #c82333; }
+.btn-secondary { background-color: #6c757d; color: white; border-color: #6c757d;}
+.btn-secondary:hover { background-color: #545b62; }
+
+.loading-message, .error-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.error-message {
+  color: red;
+}
